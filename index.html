@@ -1,21 +1,22 @@
 
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Learn how to use CSS variables to write cleaner, reusable, and more maintainable stylesheets. Discover tips, examples, and best practices."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Custom Properties</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="description"
-    content="Learn how to use CSS variables to write cleaner, reusable, and more maintainable stylesheets. Discover tips, examples, and best practices." />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CSS Custom Properties</title>
-</head>
+  <body>
+    <header>
+      <h1>CSS Variables</h1>
+    </header>
 
-<body>
-  <header>
-    <h1>CSS Variables</h1>
-  </header>
-
-  <main>
+    <main>
 
     <section class="what-is-it">
       <h2>Introduction</h2>
@@ -43,27 +44,43 @@
         }
     </code>
     </section>
+<section class="what-it-do">
+        <h2>What does it do?</h2>
+        <p>
+          CSS custom properties allows you to create reusable values for things
+          such as colours, font sizes, or spacing. The value is declared by
+          using two dashes followed by the property name, which will allow you
+          to be able to reference it throughout the CSS document.
+        </p>
+        <p>
+          Once a CSS custom property is defined, it can be referenced by using
+          var() instead of using a standard property value.
+        </p>
+        <p>
+          Since a custom property inherits its value from their parent element,
+          you can use the @property rule to control its inheritance. This also
+          allows you define what kind of value it accepts, its default value,
+          and whether it should inherit its value from its parent element.
+        </p>
+      </section>
+      
+      <section class="purpose">
+        <h2>Purpose</h2>
+        <p>
+          CSS custom properties enable you to limit the amount of code used in
+          your stylesheet. Without these, your code can become repetitive.
+          Through the use of CSS variables, you can define a variable in one
+          place, then refer to it in other areas of your CSS file to guarantee
+          more D.R.Y (Don’t repeat yourself) code.
+        </p>
+      </section>
 
+      <section class="use-case">
+        <h2>Use Cases</h2>
+      </section>
+    </main>
 
-
-    <section class="what-it-do">
-      <h2>What does it do?</h2>
-    </section>
-
-        <section class="purpose">
-      <h2>Purpose</h2>
-      <p>CSS custom properties enable you to limit the amount of code used in your stylesheet. Without these, your code can become repetitive. Through the use of CSS variables, you can define a variable in one place, then refer to it in other areas of your CSS file to guarantee more D.R.Y (Don’t repeat yourself) code. </p>
-    </section>
-
-    <section class="use-case">
-      <h2>Use Cases</h2>
-    </section>
-
-  </main>
-
-  <footer></footer>
-
-</body>
-
+    <footer></footer>
+  </body>
 </html>
 
