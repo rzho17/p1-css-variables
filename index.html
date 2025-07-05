@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -17,40 +16,41 @@
     </header>
 
     <main>
-
-    <section class="what-is-it">
-      <h2>Introduction</h2>
-      <p>
-        Custom Properties are also known as CSS variables or Cascading
-        Variables. They are user-defined variables that are declared once and
-        can be reused in your stylesheet. It is widely supported on nearly all
-        browsers with over 95% compatibility rate. It is Used by declaring a custom property on the :root pseudo class (globally) or within a css class (locally). Some of the common uses of css custom properties are mentioned below:
-      </p>
-      <p class ="uses">
-        <ul>
+      <section class="what-is-it">
+        <h2>Introduction</h2>
+        <p>
+          Custom Properties are also known as CSS variables or Cascading
+          Variables. They are user-defined variables that are declared once and
+          can be reused in your stylesheet. It is widely supported on nearly all
+          browsers with over 95% compatibility rate. It is Used by declaring a
+          custom property on the :root pseudo class (globally) or within a css
+          class (locally). Some of the common uses of css custom properties are
+          mentioned below:
+        </p>
+        <div class="uses">
+          <ul>
             <li>Box shadows</li>
             <li>Gradients</li>
             <li>Color themes (light / dark mode)</li>
             <li>Grids</li>
             <li>Font scaling</li>
-            <li>Responsive layout (set responsive themes for text and font size on smaller screens)</li>
-        </ul>
-      </p>
+            <li>
+              Responsive layout (set responsive themes for text and font size on
+              smaller screens)
+            </li>
+          </ul>
+        </div>
 
-      <code class="examples">
+        <code class="examples"> :root{ -- color:#ffd100; } </code>
+      </section>
 
-        :root{ 
-            -- color:#ffd100;
-        }
-    </code>
-    </section>
-<section class="what-it-do">
+      <section class="what-it-do">
         <h2>What does it do?</h2>
         <p>
           CSS custom properties allows you to create reusable values for things
-          such as colours, font sizes, or spacing. The value is declared by
-          using two dashes followed by the property name, which will allow you
-          to be able to reference it throughout the CSS document.
+          such as colors, font sizes, or spacing. The value is declared by using
+          two dashes followed by the property name, which will allow you to be
+          able to reference it throughout the CSS document.
         </p>
         <p>
           Once a CSS custom property is defined, it can be referenced by using
@@ -63,7 +63,7 @@
           and whether it should inherit its value from its parent element.
         </p>
       </section>
-      
+
       <section class="purpose">
         <h2>Purpose</h2>
         <p>
@@ -77,10 +77,241 @@
 
       <section class="use-case">
         <h2>Use Cases</h2>
+
+        <p>
+          So how do we begin to use CSS variables? First, we need to begin by
+          using the
+          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:root"
+            >:root CSS pseudo-class</a
+          >. Once we have established the root class, we can begin to make our
+          first CSS variable. For this example, let’s change the background
+          color of this div with text inside of it. We set a name for our CSS
+          variable, let’s call it background-color and let’s give it a hex value
+          (note value can be a string of text, hex value, size unit, gradient,
+          etc).
+        </p>
+
+        <h3>Syntax</h3>
+
+        <pre>
+          <code>
+            // we define the root variable in our CSS class
+            :root {
+
+            }
+          </code>
+        </pre>
+
+        <p>
+          Next, let’s set the background color of the div using the
+          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/var">
+            var() function in CSS </a
+          >. The var function allows us to insert the values of our custom
+          properties into our CSS. Var takes two properties, the initial value
+          and a fallback value, the fallback value is optional. Let’s pass our
+          custom CSS variable into the var function like so
+          var(--background-color) and a fallback value for demonstration
+          purposes.
+        </p>
+
+        <div class="ex-root">
+          <p>Give me a variable background color!</p>
+        </div>
+
+        <pre>
+          <code>
+            :root {
+              // a CSS variable with the name background-color
+              --background-color: #ffb703;
+            }
+          </code>
+        </pre>
+
+        <div class="ex-root none">
+          <p>I have a variable background color!</p>
+        </div>
+
+        <p>
+          Looks like it worked! Let’s see some more examples of what we can do
+          with CSS variables! As we mentioned above the value of a CSS variable
+          can be a string of text, hex value, size unit, or even a gradient.
+          This means we can use variables and various CSS properties like
+        </p>
+
+        <div class="uses">
+          <ul>
+            <li>Box shadows</li>
+            <li>Gradients</li>
+            <li>Color themes (light / dark mode)</li>
+            <li>Grids</li>
+            <li>Font scaling</li>
+            <li>
+              Responsive layout (set responsive themes for text and font size on
+              smaller screens)
+            </li>
+          </ul>
+        </div>
+
+        <p>
+          Let's try some of them out using CSS variables to make sure everything
+          sticks
+        </p>
+
+        <h3>Box Shadows</h3>
+
+        <div class="examples">
+          <pre>
+            <code>
+              :root {
+                --global-box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; 
+              }
+
+              .box-shadow-example {
+                box-shadow: var(--global-box-shadow)
+              }
+            </code>
+
+            <div class="box-shadow-example">
+              Placeholder
+            </div>
+          </pre>
+        </div>
+
+        <h3>Gradients</h3>
+
+        <div class="examples">
+          <pre>
+            <code>
+              :root {
+                --blue-color: #3a86ff;
+                --orange-color: #fb5607;
+                
+                --gradient: linear-gradient(to right, var(--blue-color), var(--orange-color));
+              }
+
+              .gradient-box{
+                box-shadow: var(--gradient)
+              }
+            </code>
+
+            <div class="gradient-box">
+              Placeholder
+            </div>
+          </pre>
+        </div>
+
+        <h3>Responsive Scaling</h3>
+
+        <div class="examples">
+          <pre>
+            <code>
+              :root {
+               --column-number: 2;
+               --font-size: 1rem;
+              }
+
+              @media (min-width: 48em) {
+                :root {
+                  --column-number: 4;
+                  --font-size: 2rem;
+                }
+              }
+
+              .responsive-box{
+                display: grid;
+                grid-template-columns: repeat(var(--column-number), 1fr);
+
+                font-size: var(--font-size);
+              }
+            </code>
+
+            <div class="responsive-box">
+              <div class="box"><p>Variable</p></div>
+              <div class="box"><p>Grid</p></div>
+              <div class="box"><p>Variable</p></div>
+              <div class="box"><p>Font Size</p></div>
+            </div>
+          </pre>
+        </div>
+
+        <p>
+          You are probably thinking, I get the gist of what CSS variables do,
+          but how can I actually use it to make something interesting for my own
+          projects?
+        </p>
+
+        <p>
+          Well, let’s make a cool feature like adding a light and dark mode
+          toggle for our site. First, we will need to learn a little bit about
+          data attributes.
+          <a
+            href="https://developer.mozilla.org/en-US/docs/Web/HTML/How_to/Use_data_attributes"
+            >Data attributes</a
+          >
+          are essentially like adding extra information to our HTML without
+          having any defined meaning, it will just add piece of data to allow us
+          to keep track of it. Let’s add a data attribute for theme like so
+        </p>
+
+        <pre>
+          <code>
+           &lt;body data-theme="dark"&gt;
+           &lt;/body&gt;
+          </code>
+        </pre>
+
+        <p>
+          And we can now use that theme as a CSS selector in our CSS
+          body[data-theme=”light”]. Let’s use our CSS variables to create a
+          light theme and a dark theme.
+        </p>
+
+        <pre>
+          <code>
+          :root {
+            -background-color: #edf2f4;
+            --text-color: #2b2d42;
+            --highlight-color: #d80032;
+          }
+
+          //setting the data theme pseudo class
+          [data-theme="dark"] {
+             -background-color: #2b2d42;
+            --text-color: #edf2f4;
+            --highlight-color: #ef233c;
+          }
+
+          .background {
+            background-color: var(--background-color)
+          }
+          .text {
+            color: var(--text-color)
+          }
+          .hightlights {
+            color: var(--highlight-color)
+          }
+          </code>
+        </pre>
+
+        <p>
+          And now with a little bit of javascript we can set what the current
+          theme is with a click of a button.
+        </p>
+
+        <pre>
+          <code>
+            const button = document.querySelector('#change-theme')
+            const body = document.querySelector('body')
+
+            button.addEventListener('click', () => {
+              body.getAttribute('data-theme') !== 'dark' ? body.setAttribute('data-theme', 'dark') : body.removeAttribute('data-theme')
+            })
+          </code>
+        </pre>
+        <button id="change-theme">Set Dark</button>
       </section>
     </main>
 
     <footer></footer>
   </body>
 </html>
-
