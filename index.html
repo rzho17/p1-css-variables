@@ -106,6 +106,50 @@
       <h2>Use Cases</h2>
     </section>
 
+    <section class="issues">
+      <h2>Common Issues</h2>
+
+      <h3>Not scoping them correctly</h3>
+      <p>If you declare a variable in one selector, other selectors won’t be able to access it unless they are
+        descendants (nested within it).</p>
+
+      <h4>Solutions:</h4>
+      <div class="solutions">
+        <ul>
+          <li>Check that your variable is properly scoped.</li>
+          <li>Declare the variable globally using the <code class="examples">:root</code> pseudo-selector if you want to
+            access it throughout
+            your CSS file.</li>
+        </ul>
+      </div>
+
+      <h3>Not adding a fallback value</h3>
+      <p>In situations where a value is invalid (e.g., <code class="examples">--bg-color: 16px</code>), a fallback value
+        ensures a substitution can be used. If you don’t add a fallback, then the variable would default to its initial
+        or inherited value.</p>
+
+      <h4>Solutions:</h4>
+      <div class="solutions">
+        <ul>
+          <li>Add a fallback value to your variables.</li>
+          <li>Review your code to ensure you are defining variables and using valid values.</li>
+        </ul>
+      </div>
+
+      <h3>Overusing custom properties</h3>
+      <p>While CSS variables offer more flexibility, overusing them can complicate things by creating cluttered code
+        that is difficult to manage.</p>
+
+      <h4>Solutions:</h4>
+      <div class="solutions">
+        <ul>
+          <li>Avoid using them for every single thing and minor layout changes.</li>
+          <li>Limit usage of variables to values that will be reused multiple times or that are likely to change.</li>
+        </ul>
+      </div>
+
+    </section>
+
 
   </main>
 
