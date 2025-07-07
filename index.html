@@ -7,12 +7,36 @@
       content="Learn how to use CSS variables to write cleaner, reusable, and more maintainable stylesheets. Discover tips, examples, and best practices."
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles/normalize.css" />
+    <link rel="stylesheet" href="styles/styles.css" />
     <title>CSS Custom Properties</title>
   </head>
 
   <body>
     <header>
       <h1>CSS Variables</h1>
+
+      <picture>
+        <img
+          srcset="
+            ./assets/pencil-400.jpg   400w,
+            ./assets/pencil-1286.jpg 1286w,
+            ./assets/pencil-1996.jpg 1996w,
+            ./assets/pencil-2400.jpg 2400w
+          "
+          sizes="(max-width: 150em) 100vw, 2400px"
+          src="./assets/pencil-2400.jpg"
+          alt="a palette of colored pencils"
+        />
+      </picture>
     </header>
     <main>
       <section class="what-is-it">
@@ -39,7 +63,11 @@
             </li>
           </ul>
         </div>
-        <code class="examples"> :root{ -- color:#ffd100; } </code>
+        <pre>
+<code class="examples">:root{
+  --color: #ffd100; 
+} </code>
+        </pre>
       </section>
 
       <section class="what-it-do">
@@ -127,12 +155,13 @@
         <h3>Syntax</h3>
 
         <pre>
-          <code>
-            // we define the root variable in our CSS class
-            :root {
+<code>
+// we define the root 
+in our CSS class
+:root {
 
-            }
-          </code>
+}
+</code>
         </pre>
 
         <p>
@@ -152,12 +181,13 @@
         </div>
 
         <pre>
-          <code>
-            :root {
-              // a CSS variable with the name background-color
-              --background-color: #ffb703;
-            }
-          </code>
+  <code>
+:root {
+  // a CSS variable with
+    the name background-color
+  --background-color: #ffb703;
+}
+  </code>
         </pre>
 
         <div class="ex-root none">
@@ -194,77 +224,78 @@
 
         <div class="examples">
           <pre>
-            <code>
-              :root {
-                --global-box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; 
-              }
+<code>
+:root {
+  --global-box-shadow:
+   rgba(0, 0, 0, 0.35)
+    0px 5px 15px; 
+}
 
-              .box-shadow-example {
-                box-shadow: var(--global-box-shadow)
-              }
-            </code>
-
-            <div class="box-shadow-example">
-              Placeholder
-            </div>
+.box-shadow-example {
+  box-shadow: 
+  var(--global-box-shadow)
+}
+</code>
           </pre>
+          <div class="box-shadow-example">Placeholder</div>
         </div>
 
         <h3>Gradients</h3>
 
         <div class="examples">
           <pre>
-            <code>
-              :root {
-                --blue-color: #3a86ff;
-                --orange-color: #fb5607;
-                
-                --gradient: linear-gradient(to right, var(--blue-color), var(--orange-color));
-              }
+<code>
+:root {
+--blue-color: #3a86ff;
+--orange-color: #fb5607;
 
-              .gradient-box{
-                box-shadow: var(--gradient)
-              }
-            </code>
+--gradient:
+linear-gradient(to right, 
+var(--blue-color), 
+var(--orange-color));
+}
 
-            <div class="gradient-box">
-              Placeholder
-            </div>
-          </pre>
+.gradient-box{
+box-shadow: var(--gradient)
+}
+</code>
+</pre>
+          <div class="gradient-box">Placeholder</div>
         </div>
 
         <h3>Responsive Scaling</h3>
 
         <div class="examples">
           <pre>
-            <code>
-              :root {
-               --column-number: 2;
-               --font-size: 1rem;
-              }
+<code>
+:root {
+--column-number: 2;
+--font-size: 1rem;
+}
 
-              @media (min-width: 48em) {
-                :root {
-                  --column-number: 4;
-                  --font-size: 2rem;
-                }
-              }
+@media (min-width: 48em) {
+:root {
+  --column-number: 4;
+  --font-size: 2rem;
+}
+}
 
-              .responsive-box{
-                display: grid;
-                grid-template-columns: repeat(var(--column-number), 1fr);
+.responsive-box{
+display: grid;
+grid-template-columns: 
+repeat(var(--column-number),1fr);
 
-                font-size: var(--font-size);
-              }
-            </code>
+font-size: var(--font-size);
+}
+</code>
 
-            <div class="responsive-box">
-              <div class="box"><p>Variable</p></div>
-              <div class="box"><p>Grid</p></div>
-              <div class="box"><p>Variable</p></div>
-              <div class="box"><p>Font Size</p></div>
-            </div>
-          </pre>
+</pre>
+          <div class="responsive-box">
+            <div class="box"><p>Variable</p></div>
+            <div class="box"><p>Grid</p></div>
+            <div class="box"><p>Variable</p></div>
+            <div class="box"><p>Font Size</p></div>
+          </div>
         </div>
 
         <p>
@@ -287,10 +318,10 @@
         </p>
 
         <pre>
-          <code>
-           &lt;body data-theme="dark"&gt;
-           &lt;/body&gt;
-          </code>
+<code>
+&lt;body data-theme="dark"&gt;
+&lt;/body&gt;
+</code>
         </pre>
 
         <p>
@@ -300,30 +331,32 @@
         </p>
 
         <pre>
-          <code>
-          :root {
-            -background-color: #edf2f4;
-            --text-color: #2b2d42;
-            --highlight-color: #d80032;
-          }
+<code>
+:root {
+-background-color: #edf2f4;
+--text-color: #2b2d42;
+--highlight-color: #d80032;
+}
 
-          //setting the data theme pseudo class
-          [data-theme="dark"] {
-             -background-color: #2b2d42;
-            --text-color: #edf2f4;
-            --highlight-color: #ef233c;
-          }
+//setting the data 
+theme pseudo class
+[data-theme="dark"] {
+-background-color: #2b2d42;
+--text-color: #edf2f4;
+--highlight-color: #ef233c;
+}
 
-          .background {
-            background-color: var(--background-color)
-          }
-          .text {
-            color: var(--text-color)
-          }
-          .hightlights {
-            color: var(--highlight-color)
-          }
-          </code>
+.background {
+background-color: 
+var(--background-color)
+}
+.text {
+color: var(--text-color)
+}
+.hightlights {
+color: var(--highlight-color)
+}
+</code>
         </pre>
 
         <p>
@@ -332,14 +365,23 @@
         </p>
 
         <pre>
-          <code>
-            const button = document.querySelector('#change-theme')
-            const body = document.querySelector('body')
+<code>
+const button = 
+document.querySelector
+('#change-theme')
+const body = 
+document.querySelector('body')
 
-            button.addEventListener('click', () => {
-              body.getAttribute('data-theme') !== 'dark' ? body.setAttribute('data-theme', 'dark') : body.removeAttribute('data-theme')
-            })
-          </code>
+button.addEventListener('click',
+ () => {
+body.getAttribute('data-theme') 
+!== 'dark' ? 
+body.setAttribute
+('data-theme', 'dark') : 
+body.removeAttribute
+('data-theme')
+})
+</code>
         </pre>
         <button id="change-theme">Set Dark</button>
       </section>
