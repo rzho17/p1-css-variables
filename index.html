@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -17,34 +16,34 @@
     </header>
 
     <main>
-
-    <section class="what-is-it">
-      <h2>Introduction</h2>
-      <p>
-        Custom Properties are also known as CSS variables or Cascading
-        Variables. They are user-defined variables that are declared once and
-        can be reused in your stylesheet. It is widely supported on nearly all
-        browsers with over 95% compatibility rate. It is Used by declaring a custom property on the :root pseudo class (globally) or within a css class (locally). Some of the common uses of css custom properties are mentioned below:
-      </p>
-      <p class ="uses">
-        <ul>
+      <section class="what-is-it">
+        <h2>Introduction</h2>
+        <p>
+          Custom Properties are also known as CSS variables or Cascading
+          Variables. They are user-defined variables that are declared once and
+          can be reused in your stylesheet. It is widely supported on nearly all
+          browsers with over 95% compatibility rate. It is Used by declaring a
+          custom property on the :root pseudo class (globally) or within a css
+          class (locally). Some of the common uses of css custom properties are
+          mentioned below:
+        </p>
+        <div class="uses">
+          <ul>
             <li>Box shadows</li>
             <li>Gradients</li>
             <li>Color themes (light / dark mode)</li>
             <li>Grids</li>
             <li>Font scaling</li>
-            <li>Responsive layout (set responsive themes for text and font size on smaller screens)</li>
-        </ul>
-      </p>
+            <li>
+              Responsive layout (set responsive themes for text and font size on
+              smaller screens)
+            </li>
+          </ul>
+        </div>
 
-      <code class="examples">
-
-        :root{ 
-            -- color:#ffd100;
-        }
-    </code>
-    </section>
-<section class="what-it-do">
+        <code class="examples"> :root{ -- color:#ffd100; } </code>
+      </section>
+      <section class="what-it-do">
         <h2>What does it do?</h2>
         <p>
           CSS custom properties allows you to create reusable values for things
@@ -57,13 +56,17 @@
           var() instead of using a standard property value.
         </p>
         <p>
+          It also makes your stylesheet more maintainable and convenient in
+          terms of applying consistent design throughout your stylesheet
+        </p>
+        <p>
           Since a custom property inherits its value from their parent element,
           you can use the @property rule to control its inheritance. This also
           allows you define what kind of value it accepts, its default value,
           and whether it should inherit its value from its parent element.
         </p>
       </section>
-      
+
       <section class="purpose">
         <h2>Purpose</h2>
         <p>
@@ -83,4 +86,3 @@
     <footer></footer>
   </body>
 </html>
-
