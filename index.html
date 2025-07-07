@@ -71,7 +71,8 @@
         <h3>Pros:</h3>
         <ul>
           <li>Less repetitive code</li>
-          <li>Cleaner and more organized</li>
+          <li>Cleaner and more organized code</li>
+          <li>Saves you time</li>
           <li>More manageable</li>
           <li>Dynamic styling</li>
           <li>Can be scoped</li>
@@ -87,18 +88,16 @@
       <p>
         CSS custom properties enable you to limit the amount of code used in your stylesheet. Without these, your code
         can become repetitive. Through the use of variables, you can define a variable in one place, then refer to it in
-        other areas of your stylesheet to guarantee more D.R.Y. (Don’t Repeat Yourself) code. CSS variables make your
-        code more efficient, organized, clean, and maintainable.
+        other areas of your stylesheet to allow for bulk editing and guarantee more D.R.Y (Don’t repeat yourself) code.
+        CSS variables make your code more efficient, organized, clean, and maintainable. You can even provide fallback values in the event you don't properly define a value, which ensures the styling is still applied. 
       </p>
 
       <p>
-        They allow for dynamic styling, where the style is updated (while a user is still on the site) using JavaScript,
-        such as a dark/light mode feature.
+        They allow for dynamic styling, where the style is updated (without needing to reload the site) using JavaScript, such as implementing a light and dark mode feature.
       </p>
 
       <p>
-        Custom properties can also be scoped by declaring them in a single element, so they will only apply to that
-        specific element and its children.
+        Custom properties can also be scoped locally (by declaring them in a single element, so they will only apply to that specific element and its children) or defined globally (with the <code class="examples">:root</code> selector).
       </p>
     </section>
 
