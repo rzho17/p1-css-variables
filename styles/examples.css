@@ -57,9 +57,6 @@
   text-align: center;
 }
 
-.box {
-  border: 1px solid;
-}
 @media (min-width: 48em) {
   :root {
     --column-number: 4;
