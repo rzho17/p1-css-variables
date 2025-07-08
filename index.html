@@ -7,12 +7,37 @@
       content="Learn how to use CSS variables to write cleaner, reusable, and more maintainable stylesheets. Discover tips, examples, and best practices."
     />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Oswald:wght@200..700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles/normalize.css" />
+    <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="stylesheet" href="styles/examples.css" />
     <title>CSS Custom Properties</title>
   </head>
 
   <body>
     <header>
       <h1>CSS Variables</h1>
+
+      <picture>
+        <img
+          srcset="
+            ./assets/pencil-400.jpg   400w,
+            ./assets/pencil-1286.jpg 1286w,
+            ./assets/pencil-1996.jpg 1996w,
+            ./assets/pencil-2400.jpg 2400w
+          "
+          sizes="(max-width: 150em) 100vw, 2400px"
+          src="./assets/pencil-2400.jpg"
+          alt="a palette of colored pencils"
+        />
+      </picture>
     </header>
     <main>
       <section class="what-is-it">
@@ -39,7 +64,11 @@
             </li>
           </ul>
         </div>
-        <code class="examples"> :root{ -- color:#ffd100; } </code>
+        <pre>
+<code class="examples">:root{
+  --color: #ffd100; 
+} </code>
+        </pre>
       </section>
 
       <section class="what-it-do">
@@ -115,36 +144,41 @@
           So how do we begin to use CSS variables? First, we need to begin by
           using the
           <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:root"
-            >:root CSS pseudo-class</a
-          >. Once we have established the root class, we can begin to make our
-          first CSS variable. For this example, let’s change the background
-          color of this div with text inside of it. We set a name for our CSS
-          variable, let’s call it background-color and let’s give it a hex value
-          (note value can be a string of text, hex value, size unit, gradient,
-          etc).
+            >:root</a
+          >CSS pseudo-class. Once we have established the root class, we can
+          begin to make our first CSS variable. For this example, let’s change
+          the background color of this div with text inside of it. We set a name
+          for our CSS variable, let’s call it background-color and let’s give it
+          a hex value (note value can be a string of text, hex value, size unit,
+          gradient, etc).
         </p>
 
         <h3>Syntax</h3>
 
         <pre>
-          <code>
-            // we define the root variable in our CSS class
-            :root {
+<code>
+// we define the root 
+in our CSS class
+:root {
 
-            }
-          </code>
+}
+</code>
         </pre>
 
         <p>
           Next, let’s set the background color of the div using the
-          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/var">
-            var() function in CSS </a
-          >. The var function allows us to insert the values of our custom
-          properties into our CSS. Var takes two properties, the initial value
-          and a fallback value, the fallback value is optional. Let’s pass our
-          custom CSS variable into the var function like so
-          var(--background-color) and a fallback value for demonstration
-          purposes.
+          <a
+            href="https://developer.mozilla.org/en-US/docs/Web/CSS/var"
+            target="_blank"
+          >
+            var()</a
+          >
+          function in CSS . The var function allows us to insert the values of
+          our custom properties into our CSS. Var takes two properties, the
+          initial value and a fallback value, the fallback value is optional.
+          Let’s pass our custom CSS variable into the var function like so
+          <code> var(--background-color) </code> and a fallback value for
+          demonstration purposes.
         </p>
 
         <div class="ex-root">
@@ -152,12 +186,13 @@
         </div>
 
         <pre>
-          <code>
-            :root {
-              // a CSS variable with the name background-color
-              --background-color: #ffb703;
-            }
-          </code>
+  <code>
+:root {
+// a CSS variable with
+the name background-color
+--background-color: #ffb703;
+}
+  </code>
         </pre>
 
         <div class="ex-root none">
@@ -194,77 +229,79 @@
 
         <div class="examples">
           <pre>
-            <code>
-              :root {
-                --global-box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; 
-              }
+<code>
+:root {
+  --global-box-shadow:
+   rgba(0, 0, 0, 0.35)
+    0px 5px 15px; 
+}
 
-              .box-shadow-example {
-                box-shadow: var(--global-box-shadow)
-              }
-            </code>
-
-            <div class="box-shadow-example">
-              Placeholder
-            </div>
+.box-shadow-example {
+  box-shadow: 
+  var(--global-box-shadow)
+}
+</code>
           </pre>
+          <div class="box-shadow-example">Box Shadows</div>
         </div>
 
         <h3>Gradients</h3>
 
         <div class="examples">
           <pre>
-            <code>
-              :root {
-                --blue-color: #3a86ff;
-                --orange-color: #fb5607;
-                
-                --gradient: linear-gradient(to right, var(--blue-color), var(--orange-color));
-              }
+<code>
+:root {
+--blue-color: #3a86ff;
+--orange-color: #fb5607;
 
-              .gradient-box{
-                box-shadow: var(--gradient)
-              }
-            </code>
+--gradient:
+linear-gradient(to right, 
+var(--blue-color), 
+var(--orange-color));
+}
 
-            <div class="gradient-box">
-              Placeholder
-            </div>
-          </pre>
+.gradient-box{
+background: var(--gradient)
+}
+</code>
+</pre>
+          <div class="gradient-box"></div>
         </div>
 
         <h3>Responsive Scaling</h3>
 
         <div class="examples">
           <pre>
-            <code>
-              :root {
-               --column-number: 2;
-               --font-size: 1rem;
-              }
+<code>
+:root {
+--column-number: 2;
+--font-size: 1rem;
+}
 
-              @media (min-width: 48em) {
-                :root {
-                  --column-number: 4;
-                  --font-size: 2rem;
-                }
-              }
+@media (min-width: 48em) {
+:root {
+  --column-number: 4;
+  --font-size: 2rem;
+}
+}
 
-              .responsive-box{
-                display: grid;
-                grid-template-columns: repeat(var(--column-number), 1fr);
+.responsive-box{
+display: grid;
+grid-template-columns: 
+repeat(var
+(--column-number),1fr);
 
-                font-size: var(--font-size);
-              }
-            </code>
+font-size: var(--font-size);
+}
+</code>
 
-            <div class="responsive-box">
-              <div class="box"><p>Variable</p></div>
-              <div class="box"><p>Grid</p></div>
-              <div class="box"><p>Variable</p></div>
-              <div class="box"><p>Font Size</p></div>
-            </div>
-          </pre>
+</pre>
+          <div class="responsive-box">
+            <div class="box"><p>Variable</p></div>
+            <div class="box"><p>Grid</p></div>
+            <div class="box"><p>Variable</p></div>
+            <div class="box"><p>Font Size</p></div>
+          </div>
         </div>
 
         <p>
@@ -279,7 +316,11 @@
           data attributes.
           <a
             href="https://developer.mozilla.org/en-US/docs/Web/HTML/How_to/Use_data_attributes"
-            >Data attributes</a
+            target="_blank"
+            >Data attributes
+            <span class="screen-reader-text"
+              >A link to visit MDN data attributes</span
+            ></a
           >
           are essentially like adding extra information to our HTML without
           having any defined meaning, it will just add piece of data to allow us
@@ -287,10 +328,10 @@
         </p>
 
         <pre>
-          <code>
-           &lt;body data-theme="dark"&gt;
-           &lt;/body&gt;
-          </code>
+<code>
+&lt;body data-theme="dark"&gt;
+&lt;/body&gt;
+</code>
         </pre>
 
         <p>
@@ -300,30 +341,33 @@
         </p>
 
         <pre>
-          <code>
-          :root {
-            -background-color: #edf2f4;
-            --text-color: #2b2d42;
-            --highlight-color: #d80032;
-          }
+<code>
+:root {
+--background-color: #edf2f4;
+--text-color: #2b2d42;
+--highlight-color: #d80032;
+}
 
-          //setting the data theme pseudo class
-          [data-theme="dark"] {
-             -background-color: #2b2d42;
-            --text-color: #edf2f4;
-            --highlight-color: #ef233c;
-          }
+//setting the data 
+theme pseudo class
+[data-theme="dark"] {
+--background-color: #2b2d42;
+--text-color: #edf2f4;
+--highlight-color: #ef233c;
+}
 
-          .background {
-            background-color: var(--background-color)
-          }
-          .text {
-            color: var(--text-color)
-          }
-          .hightlights {
-            color: var(--highlight-color)
-          }
-          </code>
+.background {
+background-color: 
+var(--background-color)
+}
+.text {
+color: var(--text-color)
+}
+.hightlights {
+color:
+var(--highlight-color)
+}
+</code>
         </pre>
 
         <p>
@@ -332,14 +376,26 @@
         </p>
 
         <pre>
-          <code>
-            const button = document.querySelector('#change-theme')
-            const body = document.querySelector('body')
+<code>
+const button = 
+document.querySelector
+('#change-theme')
+const body = 
+document.querySelector
+('body')
 
-            button.addEventListener('click', () => {
-              body.getAttribute('data-theme') !== 'dark' ? body.setAttribute('data-theme', 'dark') : body.removeAttribute('data-theme')
-            })
-          </code>
+button.addEventListener
+('click',
+() => {
+body.getAttribute
+('data-theme') 
+!== 'dark' ? 
+body.setAttribute
+('data-theme', 'dark') : 
+body.removeAttribute
+('data-theme')
+})
+</code>
         </pre>
         <button id="change-theme">Set Dark</button>
       </section>
@@ -358,9 +414,8 @@
           <ul>
             <li>Check that your variable is properly scoped.</li>
             <li>
-              Declare the variable globally using the
-              <code class="examples">:root</code> pseudo-selector if you want to
-              access it throughout your CSS file.
+              Declare the variable globally using the :root pseudo-selector if
+              you want to access it throughout your CSS file.
             </li>
           </ul>
         </div>
@@ -408,8 +463,202 @@
           </ul>
         </div>
       </section>
+
+      <section class="links">
+        <h2>Links to Resources</h2>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Article Title</th>
+              <th>Source</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>What Are Custom Properties</td>
+              <td>
+                <a
+                  href="https://www.geeksforgeeks.org/css/what-are-css-custom-properties"
+                  target="_blank"
+                >
+                  GeeksforGeeks
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td>CSS Variables</td>
+              <td>
+                <a
+                  href="https://blog.hubspot.com/website/css-variables"
+                  target="_blank"
+                >
+                  HubSpot
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td>Complete Guide to Custom Properties</td>
+              <td>
+                <a
+                  href="https://css-tricks.com/a-complete-guide-to-custom-properties"
+                  target="_blank"
+                >
+                  CSS Tricks
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td>Start Using CSS Custom Properties</td>
+              <td>
+                <a
+                  href="https://www.smashingmagazine.com/2017/04/start-using-css-custom-properties"
+                  target="_blank"
+                >
+                  Smashing Mag
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td>Using Custom Properties</td>
+              <td>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_cascading_variables/Using_CSS_custom_properties"
+                  target="_blank"
+                >
+                  MDN
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td>7 Uses for Custom Properties</td>
+              <td>
+                <a
+                  href="https://css-irl.info/7-uses-for-css-custom-properties/"
+                  target="_blank"
+                >
+                  CSS IRL
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td>Custom Variables &amp; How to Use Them</td>
+              <td>
+                <a
+                  href="https://www.htmlallthethings.com/blog-posts/css-variables-what-are-they-how-to-use-them"
+                  target="_blank"
+                >
+                  HTML All the Things
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td>Dynamic Styling</td>
+              <td>
+                <a
+                  href="https://www.letsbuildui.dev/articles/dynamic-styling-with-css-variables"
+                  target="_blank"
+                >
+                  Let's Build UI
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td>Variable Pitfalls</td>
+              <td>
+                <a
+                  href="https://blog.pixelfreestudio.com/css-variables-gone-wrong-pitfalls-to-watch-out-for"
+                  target="_blank"
+                >
+                  Pixel Free Studio
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td>Limitations of Variables</td>
+              <td>
+                <a
+                  href="https://cloudfour.com/thinks/an-interesting-limitation-of-css-custom-properties"
+                  target="_blank"
+                >
+                  Cloud Four
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td>Responsive Designs &amp; Breakpoints</td>
+              <td>
+                <a
+                  href="https://css-tricks.com/responsive-designs-and-css-custom-properties-defining-variables-and-breakpoints"
+                  target="_blank"
+                >
+                  CSS Tricks
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td>Dark &amp; Light Mode</td>
+              <td>
+                <a
+                  href="https://css-irl.info/quick-and-easy-dark-mode-with-css-custom-properties"
+                  target="_blank"
+                >
+                  CSS IRL
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td>Fallbacks for Efficiency</td>
+              <td>
+                <a
+                  href="https://dainemawer.com/articles/using-css-custom-properties-with-fallbacks-for-efficiency"
+                  target="_blank"
+                >
+                  Daine Mawer
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td>Invalid &amp; Inheritable Custom Properties</td>
+              <td>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_cascading_variables/Using_CSS_custom_properties#invalid_custom_properties"
+                  target="_blank"
+                >
+                  MDN
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td>How to use Data Attributes</td>
+              <td>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/HTML/How_to/Use_data_attributes"
+                  target="_blank"
+                >
+                  MDN
+                </a>
+              </td>
+            </tr>
+            <tr>
+              <td>Var() Function in CSS</td>
+              <td>
+                <a
+                  href="https://developer.mozilla.org/en-US/docs/Web/CSS/var"
+                  target="_blank"
+                >
+                  MDN
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
     </main>
 
-    <footer></footer>
+    <footer>
+      <p>Made by Jogdeep, Quinn, Vencent, and Richard</p>
+    </footer>
+    <script src="scripts/script.js"></script>
   </body>
 </html>
