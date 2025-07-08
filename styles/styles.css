@@ -8,14 +8,30 @@
   --secondary-color: #006925;
   --white-color: #ffffff;
 
-  --graph-img-color: rgb(169, 169, 169);
+  --list-color: #f8f8f8;
   --secondary-hover: #44af69;
 
   --box-shadow: #0000003d 0px 3px 8px;
 }
 
+/* dark mode */
+body[data-theme="dark"] {
+  --background-color: #1e202f;
+  --heading-color: #edf2f4;
+  --text-color: #edf2f4;
+  --card-color: #515151;
+  --primary-color: #eb4255;
+  --secondary-color: #00d049;
+  --white-color: #ffffff;
+
+  --list-color: #bab9b9;
+  --secondary-hover: #44af69;
+}
+
+/* global styles */
 body {
   font-family: "Open Sans", sans-serif;
+  background-color: var(--background-color);
 }
 
 h1,
@@ -24,8 +40,65 @@ h3,
 h4,
 h5,
 h6 {
+  color: var(--primary-color);
   font-family: "Oswald", sans-serif;
 }
+
+h3,
+h4,
+h5,
+h6 {
+  color: var(--heading-color);
+}
+
+ul {
+  background-color: var(--list-color);
+  padding: 0;
+
+  list-style: none;
+}
+
+li {
+  padding: 1rem;
+  border-bottom: 1px solid var(--secondary-color);
+}
+
+p {
+  color: var(--text-color);
+}
+
+pre {
+  background-color: var(--card-color);
+  padding: 1rem;
+}
+
+code {
+  color: var(--text-color);
+}
+
+/* links */
+
+a {
+  padding: 1rem 0.5rem;
+}
+a,
+a:visited {
+  color: var(--secondary-color);
+  /* color: inherit; */
+  text-decoration: none;
+}
+
+a:hover,
+a:focus,
+a:active {
+  text-decoration: underline;
+}
+
+a:focus {
+  outline: 1px dotted;
+}
+
+/* intro section */
 
 header {
   display: flex;
@@ -36,7 +109,7 @@ header {
 
 h1 {
   font-size: clamp(2.5rem, 3vw, 5rem);
-  color: black;
+  color: var(--heading-color);
   position: absolute;
   z-index: 1;
 
@@ -54,10 +127,24 @@ img {
   object-fit: cover;
 }
 
+/* main section */
+
 main {
   padding: 0 1rem;
-
-  line-height: 1.6;
+  line-height: 1.75;
 }
 
-/* what is it section */
+.box-shadow-example {
+  color: var(--heading-color);
+  background-color: var(--card-color);
+}
+
+#change-theme {
+  cursor: pointer;
+  background-color: transparent;
+  border: 1px solid var(--text-color);
+  color: var(--text-color);
+  font-size: 1.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+}

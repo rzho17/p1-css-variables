@@ -17,6 +17,7 @@
 
     <link rel="stylesheet" href="styles/normalize.css" />
     <link rel="stylesheet" href="styles/styles.css" />
+    <link rel="stylesheet" href="styles/examples.css" />
     <title>CSS Custom Properties</title>
   </head>
 
@@ -183,9 +184,9 @@ in our CSS class
         <pre>
   <code>
 :root {
-  // a CSS variable with
-    the name background-color
-  --background-color: #ffb703;
+// a CSS variable with
+the name background-color
+--background-color: #ffb703;
 }
   </code>
         </pre>
@@ -237,7 +238,7 @@ in our CSS class
 }
 </code>
           </pre>
-          <div class="box-shadow-example">Placeholder</div>
+          <div class="box-shadow-example">Box Shadows</div>
         </div>
 
         <h3>Gradients</h3>
@@ -256,11 +257,11 @@ var(--orange-color));
 }
 
 .gradient-box{
-box-shadow: var(--gradient)
+background: var(--gradient)
 }
 </code>
 </pre>
-          <div class="gradient-box">Placeholder</div>
+          <div class="gradient-box"></div>
         </div>
 
         <h3>Responsive Scaling</h3>
@@ -283,7 +284,8 @@ box-shadow: var(--gradient)
 .responsive-box{
 display: grid;
 grid-template-columns: 
-repeat(var(--column-number),1fr);
+repeat(var
+(--column-number),1fr);
 
 font-size: var(--font-size);
 }
@@ -354,7 +356,8 @@ var(--background-color)
 color: var(--text-color)
 }
 .hightlights {
-color: var(--highlight-color)
+color:
+var(--highlight-color)
 }
 </code>
         </pre>
@@ -370,11 +373,14 @@ const button =
 document.querySelector
 ('#change-theme')
 const body = 
-document.querySelector('body')
+document.querySelector
+('body')
 
-button.addEventListener('click',
- () => {
-body.getAttribute('data-theme') 
+button.addEventListener
+('click',
+() => {
+body.getAttribute
+('data-theme') 
 !== 'dark' ? 
 body.setAttribute
 ('data-theme', 'dark') : 
@@ -400,9 +406,8 @@ body.removeAttribute
           <ul>
             <li>Check that your variable is properly scoped.</li>
             <li>
-              Declare the variable globally using the
-              <code class="examples">:root</code> pseudo-selector if you want to
-              access it throughout your CSS file.
+              Declare the variable globally using the :root pseudo-selector if
+              you want to access it throughout your CSS file.
             </li>
           </ul>
         </div>
@@ -453,5 +458,6 @@ body.removeAttribute
     </main>
 
     <footer></footer>
+    <script src="scripts/script.js"></script>
   </body>
 </html>
