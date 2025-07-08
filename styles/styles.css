@@ -118,15 +118,37 @@ a:focus {
 
 /* site nav */
 
-#site-nav {
-  /* display: none; */
+#site-nav button {
+  position: fixed;
+  right: 5%;
+  bottom: 5%;
+
+  border: 1px solid var(--text-color);
+  color: var(--text-color);
+  background-color: var(--background-color);
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
 }
+
 #site-nav ul {
+  border: 1px solid var(--primary-color);
+  border-radius: 10px;
+  position: fixed;
+  right: -100%;
   text-align: center;
   background-color: var(--card-color);
 }
+
+#site-nav ul.toggled {
+  right: 0;
+  bottom: 10%;
+}
 #site-nav li {
   border-bottom: 1px solid var(--primary-color);
+}
+
+#site-nav li:last-of-type {
+  border: none;
 }
 #site-nav a {
   color: var(--heading-color);
@@ -253,6 +275,14 @@ footer p {
     align-self: start;
   }
 
+  /* hide nav button and display nav bar */
+
+  #site-nav button {
+    display: none;
+  }
+  #site-nav ul {
+    position: static;
+  }
   main section {
     max-width: 65rem;
   }

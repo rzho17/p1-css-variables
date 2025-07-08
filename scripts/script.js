@@ -1,3 +1,4 @@
+// sets light and dark mode
 const changeBtn = document.querySelector("#change-theme");
 
 changeBtn.addEventListener("click", () => {
@@ -10,4 +11,12 @@ changeBtn.addEventListener("click", () => {
     document.body.removeAttribute("data-theme");
     changeBtn.innerHTML = "Set Dark";
   }
+});
+
+// mobile nav bar toggle
+const menuBtn = document.querySelector("#site-nav button");
+const nav = document.querySelector("#site-nav ul");
+
+menuBtn.addEventListener("click", () => {
+  nav.classList.toggle("toggled");
 });
