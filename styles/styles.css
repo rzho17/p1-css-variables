@@ -67,17 +67,6 @@ h6 {
   color: var(--heading-color);
 }
 
-ul,
-pre,
-code,
-.ex-root,
-.box-shadow-example,
-.gradient-box,
-.responsive-box,
-p {
-  max-width: 50rem;
-}
-
 /* list styles */
 ul {
   background-color: var(--list-color);
@@ -184,13 +173,6 @@ main {
   line-height: 1.75;
 }
 
-section {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
 .box-shadow-example {
   color: var(--heading-color);
   background-color: var(--card-color);
@@ -230,6 +212,26 @@ footer p {
 }
 
 @media (min-width: 48em) {
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  main section {
+    max-width: 65rem;
+  }
+
+  pre,
+  code,
+  ul,
+  .ex-root,
+  .box-shadow-example,
+  .gradient-box,
+  .responsive-box {
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
   .links {
     display: flex;
     flex-direction: column;
