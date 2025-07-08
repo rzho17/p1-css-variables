@@ -144,13 +144,13 @@
           So how do we begin to use CSS variables? First, we need to begin by
           using the
           <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:root"
-            >:root CSS pseudo-class</a
-          >. Once we have established the root class, we can begin to make our
-          first CSS variable. For this example, let’s change the background
-          color of this div with text inside of it. We set a name for our CSS
-          variable, let’s call it background-color and let’s give it a hex value
-          (note value can be a string of text, hex value, size unit, gradient,
-          etc).
+            >:root</a
+          >CSS pseudo-class. Once we have established the root class, we can
+          begin to make our first CSS variable. For this example, let’s change
+          the background color of this div with text inside of it. We set a name
+          for our CSS variable, let’s call it background-color and let’s give it
+          a hex value (note value can be a string of text, hex value, size unit,
+          gradient, etc).
         </p>
 
         <h3>Syntax</h3>
@@ -171,13 +171,14 @@ in our CSS class
             href="https://developer.mozilla.org/en-US/docs/Web/CSS/var"
             target="_blank"
           >
-            var() function in CSS </a
-          >. The var function allows us to insert the values of our custom
-          properties into our CSS. Var takes two properties, the initial value
-          and a fallback value, the fallback value is optional. Let’s pass our
-          custom CSS variable into the var function like so
-          var(--background-color) and a fallback value for demonstration
-          purposes.
+            var()</a
+          >
+          function in CSS . The var function allows us to insert the values of
+          our custom properties into our CSS. Var takes two properties, the
+          initial value and a fallback value, the fallback value is optional.
+          Let’s pass our custom CSS variable into the var function like so
+          <code> var(--background-color) </code> and a fallback value for
+          demonstration purposes.
         </p>
 
         <div class="ex-root">
@@ -316,7 +317,10 @@ font-size: var(--font-size);
           <a
             href="https://developer.mozilla.org/en-US/docs/Web/HTML/How_to/Use_data_attributes"
             target="_blank"
-            >Data attributes</a
+            >Data attributes
+            <span class="screen-reader-text"
+              >A link to visit MDN data attributes</span
+            ></a
           >
           are essentially like adding extra information to our HTML without
           having any defined meaning, it will just add piece of data to allow us
@@ -339,7 +343,7 @@ font-size: var(--font-size);
         <pre>
 <code>
 :root {
--background-color: #edf2f4;
+--background-color: #edf2f4;
 --text-color: #2b2d42;
 --highlight-color: #d80032;
 }
@@ -347,7 +351,7 @@ font-size: var(--font-size);
 //setting the data 
 theme pseudo class
 [data-theme="dark"] {
--background-color: #2b2d42;
+--background-color: #2b2d42;
 --text-color: #edf2f4;
 --highlight-color: #ef233c;
 }

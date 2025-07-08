@@ -1,3 +1,11 @@
+/* TABLE OF CONTENTS
+- Root styles
+- Setting Root Color
+- Box shadow example
+- Gradient example
+- Media query example
+ */
+
 :root {
   --white-color: #ffffff;
 

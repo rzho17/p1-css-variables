@@ -2,7 +2,6 @@ const changeBtn = document.querySelector("#change-theme");
 
 changeBtn.addEventListener("click", () => {
   const theme = document.body.getAttribute("data-theme");
-  console.log(theme);
 
   if (theme === null) {
     document.body.setAttribute("data-theme", "dark");

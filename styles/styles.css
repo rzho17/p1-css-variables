@@ -1,3 +1,11 @@
+/* TABLE OF CONTENTS
+- Root styles
+- Global styles
+- Main styles
+- Footer styles
+- Media query
+ */
+
 /* root styles */
 :root {
   --background-color: #edf2f4;
@@ -21,7 +29,7 @@ body[data-theme="dark"] {
   --text-color: #edf2f4;
   --card-color: #515151;
   --primary-color: #eb4255;
-  --secondary-color: #00d049;
+  --secondary-color: #fcff2e;
   --white-color: #ffffff;
 
   --list-color: #bab9b9;
@@ -44,6 +52,14 @@ h6 {
   font-family: "Oswald", sans-serif;
 }
 
+h2 {
+  font-size: clamp(2rem, 2.5vw, 3rem);
+}
+
+h3 {
+  font-size: clamp(1.5rem, 1vw, 2rem);
+}
+
 h3,
 h4,
 h5,
@@ -51,6 +67,18 @@ h6 {
   color: var(--heading-color);
 }
 
+ul,
+pre,
+code,
+.ex-root,
+.box-shadow-example,
+.gradient-box,
+.responsive-box,
+p {
+  max-width: 50rem;
+}
+
+/* list styles */
 ul {
   background-color: var(--list-color);
   padding: 0;
@@ -134,7 +162,7 @@ header {
 
 h1 {
   font-size: clamp(2.5rem, 6vw, 10rem);
-  color: var(--text-color);
+  color: #1e202f;
   position: absolute;
   z-index: 1;
 
@@ -154,6 +182,13 @@ picture {
 main {
   padding: 0 1rem;
   line-height: 1.75;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .box-shadow-example {
@@ -189,8 +224,18 @@ footer {
 }
 
 footer p {
+  margin: 0 auto;
   color: var(--background-color);
   line-height: 1.5;
+}
+
+@media (min-width: 48em) {
+  .links {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 }
 
 @media (min-width: 64em) {
