@@ -67,17 +67,6 @@ h6 {
   color: var(--heading-color);
 }
 
-ul,
-pre,
-code,
-.ex-root,
-.box-shadow-example,
-.gradient-box,
-.responsive-box,
-p {
-  max-width: 50rem;
-}
-
 /* list styles */
 ul {
   background-color: var(--list-color);
@@ -125,6 +114,44 @@ a:active {
 
 a:focus {
   outline: 1px dotted;
+}
+
+/* site nav */
+
+#site-nav button {
+  position: fixed;
+  right: 5%;
+  bottom: 5%;
+
+  border: 1px solid var(--text-color);
+  color: var(--text-color);
+  background-color: var(--background-color);
+  border-radius: 5px;
+  padding: 0.5rem 1rem;
+}
+
+#site-nav ul {
+  border: 1px solid var(--primary-color);
+  border-radius: 10px;
+  position: fixed;
+  right: -100%;
+  text-align: center;
+  background-color: var(--card-color);
+}
+
+#site-nav ul.toggled {
+  right: 0;
+  bottom: 10%;
+}
+#site-nav li {
+  border-bottom: 1px solid var(--primary-color);
+}
+
+#site-nav li:last-of-type {
+  border: none;
+}
+#site-nav a {
+  color: var(--heading-color);
 }
 
 /* tables */
@@ -184,13 +211,6 @@ main {
   line-height: 1.75;
 }
 
-section {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
 .box-shadow-example {
   color: var(--heading-color);
   background-color: var(--card-color);
@@ -230,11 +250,61 @@ footer p {
 }
 
 @media (min-width: 48em) {
+  main {
+    /* creates grid for nav bar */
+    display: grid;
+    grid-template-columns: 1fr 250px;
+    gap: 2rem;
+    justify-self: center;
+    max-width: 80rem;
+  }
+
+  /* main content to not wrap into nav section */
+  main section {
+    justify-self: center;
+    grid-column: 1 /2;
+    align-self: start;
+  }
+
+  /* sticks nav bar to top of grid */
+  #site-nav {
+    grid-row: 1/2;
+    grid-column: 2;
+    position: sticky;
+    top: 2rem;
+    align-self: start;
+  }
+
+  /* hide nav button and display nav bar */
+
+  #site-nav button {
+    display: none;
+  }
+  #site-nav ul {
+    position: static;
+  }
+  main section {
+    max-width: 65rem;
+  }
+
+  pre,
+  code,
+  ul,
+  .ex-root,
+  .box-shadow-example,
+  .gradient-box,
+  .responsive-box {
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+
   .links {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    font-size: 1.25rem;
   }
 }
 
