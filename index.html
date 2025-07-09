@@ -15,6 +15,12 @@
       rel="stylesheet"
     />
 
+    <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="shortcut icon" href="favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="manifest" href="site.webmanifest" />
+
     <link rel="stylesheet" href="styles/normalize.css" />
     <link rel="stylesheet" href="styles/styles.css" />
     <link rel="stylesheet" href="styles/examples.css" />
@@ -431,8 +437,9 @@ body.removeAttribute
 
         <h3>Not scoping them correctly</h3>
         <p>
-          If you declare a variable in one selector, other selectors won’t be
-          able to access it unless they are descendants (nested within it).
+          When you declare a variable in a selector, only its children can
+          access it. If you have issues with styles not being applied to other
+          selectors, then it could be the result of a scoping issue.
         </p>
 
         <h4>Solutions:</h4>
